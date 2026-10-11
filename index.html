@@ -1,39 +1,53 @@
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Website</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f2f0e9">
+  <meta name="description" content="YELOE — photography, image-making and visual experiments.">
+  <title>YELOE® — Image Archive</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      background: #171323;
-      color: #fff0f5;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 80px 20px;
-    }
-
-    h1 {
-      color: #ff79b0;
-      font-size: 48px;
-    }
-
-    button {
-      background: #ff79b0;
-      border: none;
-      padding: 14px 24px;
-      border-radius: 12px;
-      cursor: pointer;
-      font-size: 16px;
-    }
+    :root{--paper:#f2f0e9;--ink:#171715;--muted:#77766f;--line:rgba(23,23,21,.22);--acid:#d9ff39;--gutter:clamp(18px,3vw,44px)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:'Space Grotesk',Arial,sans-serif}a{color:inherit;text-decoration:none}button{font:inherit;color:inherit}
+    .topline{display:flex;justify-content:space-between;align-items:center;padding:13px var(--gutter);border-bottom:1px solid var(--line);font:11px 'DM Mono',monospace;text-transform:uppercase;letter-spacing:.04em}
+    .status{display:flex;align-items:center;gap:8px}.dot{width:7px;height:7px;background:#8cb800;border-radius:50%;box-shadow:0 0 0 3px #8cb80022}
+    header{padding:clamp(28px,6vw,88px) var(--gutter) 25px}.masthead{display:flex;justify-content:space-between;align-items:flex-end;gap:20px}.wordmark{font-size:clamp(74px,18vw,250px);font-weight:700;letter-spacing:-.105em;line-height:.68;margin:0 0 .06em -.065em}.edition{text-align:right;font:11px/1.6 'DM Mono',monospace;text-transform:uppercase;max-width:180px}.intro{display:grid;grid-template-columns:1.2fr .8fr;gap:30px;margin-top:clamp(38px,7vw,100px);align-items:end}.intro h2{font-size:clamp(22px,3.5vw,48px);line-height:1.02;letter-spacing:-.06em;font-weight:500;margin:0;max-width:800px}.intro p{font:11px/1.65 'DM Mono',monospace;text-transform:uppercase;max-width:320px;margin:0 0 3px auto;color:#4b4b45}
+    .ticker{overflow:hidden;background:var(--acid);border-block:1px solid var(--ink);padding:9px 0;white-space:nowrap;font:11px 'DM Mono',monospace;text-transform:uppercase}.ticker-track{display:inline-block;animation:marquee 28s linear infinite}.ticker span{padding:0 22px}@keyframes marquee{to{transform:translateX(-50%)}}
+    .section-head{display:flex;justify-content:space-between;align-items:center;padding:30px var(--gutter) 14px;font:11px 'DM Mono',monospace;text-transform:uppercase}.section-head .rule{flex:1;height:1px;background:var(--line);margin:0 15px}
+    .gallery{padding:0 var(--gutter) 70px;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(12px,2vw,26px);align-items:start}.work{min-width:0;position:relative}.work:nth-child(1){grid-column:span 7}.work:nth-child(2){grid-column:span 5;margin-top:95px}.work:nth-child(3){grid-column:2/span 5;margin-top:10px}.work:nth-child(4){grid-column:span 6;margin-top:120px}.work:nth-child(5){grid-column:span 4;margin-top:20px}.work:nth-child(6){grid-column:8/span 5;margin-top:45px}.photo{position:relative;overflow:hidden;background:#dedbd2;aspect-ratio:4/5}.work:nth-child(1) .photo{aspect-ratio:1.22}.work:nth-child(2) .photo{aspect-ratio:3/4}.work:nth-child(3) .photo{aspect-ratio:4/5}.work:nth-child(4) .photo{aspect-ratio:1/1}.work:nth-child(5) .photo{aspect-ratio:3/4}.work:nth-child(6) .photo{aspect-ratio:4/5}.photo img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.2,1);filter:saturate(.88)}.work:hover .photo img{transform:scale(1.035)}.photo .placeholder{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:14px;color:#77766f;font:10px 'DM Mono',monospace;text-transform:uppercase;letter-spacing:.04em;background:linear-gradient(135deg,#e5e2d9,#cbc8be)}.placeholder b{font:700 clamp(32px,7vw,100px)/.8 'Space Grotesk',sans-serif;letter-spacing:-.09em;color:#b1aea3}.placeholder .cross{align-self:center;font-size:36px;color:#9d9a8f}.work figcaption{display:flex;justify-content:space-between;gap:12px;padding-top:10px;font:10px/1.5 'DM Mono',monospace;text-transform:uppercase}.work figcaption .num{color:var(--muted)}
+    .manifesto{margin:0 var(--gutter) 80px;padding:28px 0 34px;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);display:grid;grid-template-columns:1fr 2fr;gap:30px}.manifesto .label{font:11px 'DM Mono',monospace;text-transform:uppercase}.manifesto h3{font-size:clamp(30px,6vw,82px);line-height:.95;letter-spacing:-.075em;font-weight:500;margin:0;max-width:900px}.manifesto h3 em{font-style:normal;background:var(--acid);padding:0 .08em}
+    footer{background:var(--ink);color:var(--paper);padding:24px var(--gutter) 30px}.footer-top{display:flex;justify-content:space-between;gap:20px;font:11px 'DM Mono',monospace;text-transform:uppercase}.footer-main{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;padding:70px 0 45px}.footer-main strong{font-size:clamp(48px,11vw,150px);line-height:.8;letter-spacing:-.1em}.contact{background:var(--acid);color:var(--ink);padding:15px 19px;border-radius:50px;font:11px 'DM Mono',monospace;text-transform:uppercase;transition:transform .2s}.contact:hover{transform:rotate(-3deg) scale(1.04)}.footer-bottom{display:flex;justify-content:space-between;gap:15px;border-top:1px solid #ffffff40;padding-top:12px;font:10px 'DM Mono',monospace;text-transform:uppercase;color:#c4c2b9}
+    .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:none}::selection{background:var(--acid);color:var(--ink)}
+    @media(max-width:650px){.topline{font-size:9px}.masthead{align-items:flex-start}.edition{font-size:9px;max-width:120px}.intro{grid-template-columns:1fr;gap:15px}.intro p{margin:0}.gallery{grid-template-columns:repeat(6,minmax(0,1fr));gap:28px 12px}.work:nth-child(n){grid-column:span 3;margin-top:0}.work:nth-child(1){grid-column:span 6}.work:nth-child(4){grid-column:span 6}.work:nth-child(6){grid-column:2/span 5}.manifesto{grid-template-columns:1fr;gap:25px;margin-bottom:50px}.footer-main{align-items:flex-start;flex-direction:column;padding:55px 0 35px}.footer-bottom{font-size:8px}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
   </style>
 </head>
 <body>
-  <h1>WELCOME TO MY WORLD ✦</h1>
-  <p>A little corner of the internet made by me.</p>
-  <button onclick="alert('HEYYY!! 💗')">
-    CLICK ME
-  </button>
+  <div class="topline"><span>Independent image archive · London / Everywhere</span><span class="status"><i class="dot"></i> Available for projects</span><span>Scroll to explore ↓</span></div>
+  <header>
+    <div class="masthead"><h1 class="wordmark">YELOE<span style="font-size:.22em;vertical-align:top;letter-spacing:0;margin-left:.3em">®</span></h1><div class="edition">Visual studies<br>Photography / Image-making<br>Archive no. 001 — 2026</div></div>
+    <div class="intro"><h2>Pictures, people, places.<br>Fragments of a world<br><span style="color:#89877e">in progress.</span></h2><p>A personal image archive exploring atmosphere, movement and the strange little details that make a moment stay with you.</p></div>
+  </header>
+  <div class="ticker" aria-label="Photography image making visual experiments"><div class="ticker-track"><span>Photography ✳ Image-making ✳ Visual experiments ✳ No fixed rules ✳ Photography ✳ Image-making ✳ Visual experiments ✳ No fixed rules ✳ </span><span>Photography ✳ Image-making ✳ Visual experiments ✳ No fixed rules ✳ Photography ✳ Image-making ✳ Visual experiments ✳ No fixed rules ✳ </span></div></div>
+  <div class="section-head" id="work"><span>Selected images</span><i class="rule"></i><span>001—006 / Archive</span></div>
+  <main class="gallery">
+    <figure class="work reveal"><div class="photo"><img src="images/photo-01.jpg" alt="Selected photograph 01" onerror="this.style.display='none'"><div class="placeholder"><span>Image 001 / Replace with your photo</span><b>01</b><span class="cross">＋</span><span>Drop image into /images</span></div></div><figcaption><span>Untitled study I</span><span class="num">01 / 06</span></figcaption></figure>
+    <figure class="work reveal"><div class="photo"><img src="images/photo-02.jpg" alt="Selected photograph 02" onerror="this.style.display='none'"><div class="placeholder"><span>Image 002 / Replace with your photo</span><b>02</b><span class="cross">＋</span><span>Drop image into /images</span></div></div><figcaption><span>After hours</span><span class="num">02 / 06</span></figcaption></figure>
+    <figure class="work reveal"><div class="photo"><img src="images/photo-03.jpg" alt="Selected photograph 03" onerror="this.style.display='none'"><div class="placeholder"><span>Image 003 / Replace with your photo</span><b>03</b><span class="cross">＋</span><span>Drop image into /images</span></div></div><figcaption><span>Soft focus / Hard flash</span><span class="num">03 / 06</span></figcaption></figure>
+    <figure class="work reveal"><div class="photo"><img src="images/photo-04.jpg" alt="Selected photograph 04" onerror="this.style.display='none'"><div class="placeholder"><span>Image 004 / Replace with your photo</span><b>04</b><span class="cross">＋</span><span>Drop image into /images</span></div></div><figcaption><span>Somewhere, sometime</span><span class="num">04 / 06</span></figcaption></figure>
+    <figure class="work reveal"><div class="photo"><img src="images/photo-05.jpg" alt="Selected photograph 05" onerror="this.style.display='none'"><div class="placeholder"><span>Image 005 / Replace with your photo</span><b>05</b><span class="cross">＋</span><span>Drop image into /images</span></div></div><figcaption><span>Human frequency</span><span class="num">05 / 06</span></figcaption></figure>
+    <figure class="work reveal"><div class="photo"><img src="images/photo-06.jpg" alt="Selected photograph 06" onerror="this.style.display='none'"><div class="placeholder"><span>Image 006 / Replace with your photo</span><b>06</b><span class="cross">＋</span><span>Drop image into /images</span></div></div><figcaption><span>End of the roll</span><span class="num">06 / 06</span></figcaption></figure>
+  </main>
+  <section class="manifesto reveal"><div class="label">[ A note on the work ]</div><h3>Not everything needs to be polished. Some things just need to be <em>felt.</em></h3></section>
+  <footer><div class="footer-top"><span>YELOE® — Image archive</span><span>Built with curiosity, not rules.</span></div><div class="footer-main"><strong>LET'S<br>MAKE<br>IMAGES.</strong><a class="contact" href="mailto:hello@example.com">Start a conversation ↗</a></div><div class="footer-bottom"><span>© YELOE 2026</span><span>Independent creative practice</span><a href="https://yeloegig.portfoliobox.net/" target="_blank" rel="noreferrer">Original portfolio ↗</a></div></footer>
+  <script>
+    const observer = new IntersectionObserver(entries => entries.forEach(entry => { if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}), {threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    document.querySelectorAll('.photo').forEach(photo => {const img=photo.querySelector('img'), placeholder=photo.querySelector('.placeholder'); if(img.complete && img.naturalWidth>0) placeholder.style.display='none'; img.addEventListener('load',()=>placeholder.style.display='none');});
+  </script>
 </body>
 </html>
