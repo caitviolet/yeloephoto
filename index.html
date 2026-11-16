@@ -11,6 +11,20 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
+    .header-image {
+    width: 100%;
+    height: clamp(160px, 30vw, 420px);
+    overflow: hidden;
+    position: relative;
+}
+
+.header-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
     :root{--paper:#f2f0e9;--ink:#171715;--muted:#77766f;--line:rgba(23,23,21,.22);--acid:#d9ff39;--gutter:clamp(18px,3vw,44px)}
     *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:'Space Grotesk',Arial,sans-serif}a{color:inherit;text-decoration:none}button{font:inherit;color:inherit}
     .topline{display:flex;justify-content:space-between;align-items:center;padding:13px var(--gutter);border-bottom:1px solid var(--line);font:11px 'DM Mono',monospace;text-transform:uppercase;letter-spacing:.04em}
@@ -34,6 +48,9 @@
 ⠀⠀ ⠀⠀ ⠀⠀ ⠀⠀ ⠀⠀ ⠀⠀ ⠀⠀:¨ ·.· ¨:
 ⠀⠀ ⠀⠀ ⠀⠀ ⠀⠀ ⠀⠀ ⠀⠀ ⠀⠀ `· . ꔫ <br>welcome to yeloe<br><span style="color:#89877e"></span></h2><p>let me take your photo♡</p></div>
   </header>
+  <div class="header-image">
+    <img src="images/header.jpg" alt="YELOE header photograph">
+</div>
   <div class="ticker" aria-label="Photography image making visual experiments"><div class="ticker-track"><span>photography - video - graphic design - moving image - edit - whatever i dam want - london!! - msg 4 enquire ✳ </span><span> event photos - cinematics - post production - anything i like - anything u want - ect and et al </span></div></div>
   <div class="section-head" id="work"><span>bea, under the alias 'yeloe',  is a creative photographer and editor in london, studying gcd at central saint martins</span><i class="rule"></i><span>previous work</span></div>
   <main class="gallery">
